@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>zzirit 서비스 점검 안내</title>
+    <title>zzirit 서비스 점검 안내 | 2026.04.25~04.26</title>
     <meta
       name="description"
-      content="2026년 4월 25일(토)부터 4월 26일(일)까지 zzirit.kr 및 하위 서비스가 서버 이전으로 일시 중단됩니다."
+      content="2026년 4월 25일(토)부터 4월 26일(일)까지 서버 이전으로 인해 zzirit.kr 및 하위 서비스에 접속할 수 없습니다."
     />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#0e1726" />
-    <meta property="og:title" content="zzirit 서비스 점검 안내" />
+    <meta property="og:title" content="zzirit 서비스 점검 안내 | 2026.04.25~04.26" />
     <meta
       property="og:description"
-      content="2026년 4월 25일(토)부터 4월 26일(일)까지 서버 이전으로 인해 서비스가 일시 중단됩니다."
+      content="2026년 4월 25일(토)부터 4월 26일(일)까지 서버 이전으로 인해 zzirit.kr 및 하위 서비스에 접속할 수 없습니다."
     />
     <meta property="og:type" content="website" />
     <style>
@@ -246,7 +246,7 @@
         position: relative;
         z-index: 1;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 18px;
         padding: 0 24px 24px;
       }
@@ -391,23 +391,23 @@
         <div class="topbar">
           <div class="brand">
             <span class="brand-mark" aria-hidden="true"></span>
-            <span>zzirit service status</span>
+            <span>zzirit 상태 안내</span>
           </div>
-          <div class="status-chip">Planned maintenance</div>
+          <div class="status-chip">점검 예정</div>
         </div>
 
         <div class="hero">
-          <p class="eyebrow">Server migration notice</p>
-          <h1 id="maintenance-title">서비스 점검 안내</h1>
+          <p class="eyebrow">서버 이전 안내</p>
+          <h1 id="maintenance-title">서비스가 일시 중단됩니다</h1>
           <p class="lead">
-            서버 이전 작업으로 인해 <strong>zzirit.kr</strong> 및 하위 서비스의 이용이 일시
-            중단됩니다. 점검 기간 동안 웹 접속과 주요 기능 사용이 불가능할 수 있으며,
-            작업이 끝나는 즉시 정상화 상태로 다시 안내하겠습니다.
+            서버 이전으로 인해
+            <strong>2026년 4월 25일(토)부터 4월 26일(일)까지</strong>
+            <strong>zzirit.kr</strong> 및 하위 서비스에 접속할 수 없습니다.
           </p>
 
           <div class="hero-grid">
             <article class="panel hero-panel">
-              <p class="label">Maintenance window</p>
+              <p class="label">점검 기간</p>
               <p class="window">
                 <time datetime="2026-04-25">2026년 4월 25일(토)</time>
                 <br />
@@ -416,14 +416,14 @@
                 <time datetime="2026-04-26">2026년 4월 26일(일)</time>
               </p>
               <p>
-                점검 목적은 <strong>서버 이전</strong>입니다. 사전 예고 없이 더 길게 중단되는
-                상황을 줄이기 위해, 이번 페이지는 메인 서비스와 별도로 운영됩니다.
+                중단 사유는 <strong>서버 이전</strong>입니다. 추가 안내가 있으면 이 페이지에
+                반영합니다.
               </p>
-              <div class="impact">예상 영향: 전체 서비스 접속 중단</div>
+              <div class="impact">서비스 접근 불가</div>
             </article>
 
             <aside class="panel">
-              <p class="label">Affected services</p>
+              <p class="label">중단 대상</p>
               <ul class="service-list">
                 <li><strong>zzirit.kr</strong> 메인 웹 서비스</li>
                 <li><strong>parrot.zzirit.kr</strong> 하위 서비스</li>
@@ -433,54 +433,37 @@
           </div>
         </div>
 
-        <section class="cards" aria-label="Maintenance details">
+        <section class="cards" aria-label="추가 안내">
           <article class="panel card">
-            <p class="label">Before downtime</p>
-            <h2>사전에 확인해 주세요</h2>
+            <p class="label">안내</p>
+            <h2>점검 중에는 접속할 수 없습니다</h2>
             <ul class="notes">
-              <li>필요한 작업과 자료는 점검 시작 전 미리 저장해 주세요.</li>
-              <li>자동화 작업이나 배치가 있다면 점검 시간과 겹치지 않도록 조정해 주세요.</li>
-              <li>중요 사용자에게는 별도 공지를 함께 전달하는 편이 안전합니다.</li>
+              <li>이 기간에는 웹 접속과 주요 기능 사용이 모두 중단됩니다.</li>
+              <li>점검이 끝나면 서비스를 다시 열겠습니다.</li>
             </ul>
           </article>
 
           <article class="panel card">
-            <p class="label">During downtime</p>
-            <h2>점검 중에는 이렇게 보일 수 있습니다</h2>
+            <p class="label">업데이트</p>
+            <h2>변동 사항은 이 페이지에서 안내합니다</h2>
             <ul class="timeline">
               <li>
-                <strong>접속 불가</strong>
-                웹사이트, API, 주요 기능이 정상 응답하지 않을 수 있습니다.
+                <strong>현재 상태</strong>
+                서버 이전 작업으로 인해 서비스 접속이 불가능합니다.
               </li>
               <li>
-                <strong>일시적 오류</strong>
-                DNS 전환이나 복구 과정에서 일부 접속 오류가 간헐적으로 발생할 수 있습니다.
+                <strong>확인 위치</strong>
+                작업 진행이나 정상화 여부는 이 페이지에서 확인해 주세요.
               </li>
-              <li>
-                <strong>이 페이지는 유지</strong>
-                현재 안내 페이지는 메인 서버와 분리되어 있어 점검 중에도 확인할 수 있습니다.
-              </li>
-            </ul>
-          </article>
-
-          <article class="panel card">
-            <p class="label">After recovery</p>
-            <h2>정상화 이후</h2>
-            <ul class="notes">
-              <li>서비스 재개 직후에는 일부 캐시 반영으로 짧은 지연이 생길 수 있습니다.</li>
-              <li>점검이 끝나면 이 페이지 문구를 즉시 정상화 안내로 바꾸는 것을 권장합니다.</li>
-              <li>문제가 남아 있다면 별도 문의 채널이나 공지 채널에서 후속 안내를 추가해 주세요.</li>
             </ul>
           </article>
         </section>
 
         <footer>
           <p class="footnote">
-            이 상태 페이지는 메인 서비스와 분리된 정적 호스팅 환경에서 운영하는 것을
-            전제로 작성되었습니다. GitHub Pages에 올리면 메인 서버가 내려가 있어도 공지
-            자체는 계속 노출할 수 있습니다.
+            이 페이지는 메인 서비스와 분리되어 있어 점검 중에도 계속 열립니다.
           </p>
-          <p class="stamp">Last updated: 2026-04-24</p>
+          <p class="stamp">마지막 업데이트: 2026-04-24</p>
         </footer>
       </section>
     </main>
