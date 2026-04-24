@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>zzirit 서비스 점검 안내 | 2026.04.25~04.26</title>
+    <meta
+      name="description"
+      content="2026년 4월 25일(토)부터 4월 26일(일)까지 서버 이전으로 인해 zzirit.kr 및 하위 서비스에 접속할 수 없습니다."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#f3efe3" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f3efe3'/%3E%3Cpath d='M14 36h19L25 52h25' fill='none' stroke='%23c34a2f' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 12h26L32 30h18' fill='none' stroke='%23182232' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <meta property="og:title" content="zzirit 서비스 점검 안내 | 2026.04.25~04.26" />
+    <meta
+      property="og:description"
+      content="2026년 4월 25일(토)부터 4월 26일(일)까지 서버 이전으로 인해 zzirit.kr 및 하위 서비스에 접속할 수 없습니다."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --paper: #f3efe3;
+        --paper-strong: #fffaf0;
+        --paper-muted: #e9dfc8;
+        --ink: #182232;
+        --ink-soft: #4e5b68;
+        --ink-faint: #7f8a92;
+        --line: rgba(24, 34, 50, 0.18);
+        --line-strong: rgba(24, 34, 50, 0.36);
+        --stamp: #c34a2f;
+        --stamp-dark: #842f20;
+        --olive: #606f3d;
+        --shadow: 0 34px 90px rgba(48, 39, 22, 0.16);
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(195, 74, 47, 0.15), transparent 27%),
+          radial-gradient(circle at 88% 14%, rgba(96, 111, 61, 0.14), transparent 25%),
+          linear-gradient(135deg, rgba(24, 34, 50, 0.035) 25%, transparent 25%) 0 0 / 28px
+            28px,
+          var(--paper);
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        font-family:
+          "Apple SD Gothic Neo", "Pretendard", "SUIT", "Noto Sans KR", "Malgun Gothic",
+          sans-serif;
+        overflow-wrap: break-word;
+        word-break: keep-all;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(24, 34, 50, 0.045) 1px, transparent 1px),
+          linear-gradient(rgba(24, 34, 50, 0.035) 1px, transparent 1px);
+        background-size: 84px 84px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 82%);
+        pointer-events: none;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      strong,
+      time {
+        color: var(--ink);
+      }
+
+      main {
+        position: relative;
+        width: min(1180px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: clamp(18px, 4vw, 56px) 0;
+      }
+
+      .notice {
+        position: relative;
+        overflow: hidden;
+        min-height: calc(100svh - clamp(36px, 8vw, 112px));
+        border: 1px solid var(--line-strong);
+        background:
+          linear-gradient(90deg, transparent 0, transparent 77%, rgba(195, 74, 47, 0.08) 77%),
+          var(--paper-strong);
+        box-shadow: var(--shadow);
+        animation: boardIn 700ms cubic-bezier(0.19, 1, 0.22, 1) both;
+      }
+
+      .notice::before {
+        content: "NOTICE";
+        position: absolute;
+        right: clamp(-22px, -1.4vw, -10px);
+        bottom: clamp(12px, 5vw, 42px);
+        color: rgba(24, 34, 50, 0.045);
+        font-size: clamp(5rem, 17vw, 14rem);
+        font-weight: 900;
+        letter-spacing: -0.09em;
+        line-height: 0.8;
+        pointer-events: none;
+        writing-mode: vertical-rl;
+      }
+
+      .notice::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, transparent, rgba(255, 250, 240, 0.72), transparent),
+          linear-gradient(rgba(24, 34, 50, 0.055) 1px, transparent 1px);
+        background-size:
+          44% 100%,
+          100% 32px;
+        transform: translateX(-110%);
+        animation: paperSweep 1300ms 250ms cubic-bezier(0.19, 1, 0.22, 1) both;
+        pointer-events: none;
+      }
+
+      .masthead {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: center;
+        padding: clamp(18px, 3vw, 34px) clamp(18px, 4vw, 52px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: inline-grid;
+        gap: 4px;
+      }
+
+      .brand-name {
+        font-size: clamp(1.2rem, 2vw, 1.7rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+
+      .brand-note {
+        color: var(--ink-soft);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 44px;
+        padding: 0 15px;
+        border: 1px solid rgba(195, 74, 47, 0.38);
+        border-radius: 999px;
+        background: rgba(195, 74, 47, 0.09);
+        color: var(--stamp-dark);
+        font-weight: 800;
+      }
+
+      .status::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: var(--stamp);
+        box-shadow: 0 0 0 6px rgba(195, 74, 47, 0.13);
+        animation: signal 1800ms ease-out infinite;
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.04fr) minmax(260px, 0.62fr);
+        min-height: 520px;
+      }
+
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(28px, 6vw, 76px) clamp(18px, 4vw, 52px);
+        border-right: 1px solid var(--line);
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        color: var(--stamp);
+        font-size: 0.92rem;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 11ch;
+        margin: 0;
+        font-size: clamp(3.3rem, 9vw, 8.2rem);
+        font-weight: 900;
+        letter-spacing: -0.075em;
+        line-height: 0.92;
+      }
+
+      .lead {
+        max-width: 62ch;
+        margin: clamp(22px, 4vw, 36px) 0 0;
+        color: var(--ink-soft);
+        font-size: clamp(1.02rem, 2vw, 1.2rem);
+        font-weight: 600;
+        line-height: 1.75;
+      }
+
+      .lead time {
+        white-space: nowrap;
+      }
+
+      .impact-line {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 16px;
+        align-items: center;
+        margin-top: clamp(36px, 7vw, 72px);
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .impact-line::after {
+        content: "";
+        height: 2px;
+        background: linear-gradient(90deg, var(--stamp), transparent);
+        transform-origin: left;
+        animation: lineGrow 900ms 520ms cubic-bezier(0.19, 1, 0.22, 1) both;
+      }
+
+      .date-board {
+        display: grid;
+        align-content: stretch;
+        min-height: 100%;
+        background:
+          linear-gradient(180deg, rgba(195, 74, 47, 0.08), transparent 38%),
+          rgba(233, 223, 200, 0.42);
+      }
+
+      .date-block {
+        display: grid;
+        place-items: center;
+        padding: clamp(24px, 4vw, 42px);
+        border-bottom: 1px solid var(--line);
+        text-align: center;
+      }
+
+      .date-block:last-child {
+        border-bottom: 0;
+      }
+
+      .date-label {
+        margin: 0 0 12px;
+        color: var(--olive);
+        font-size: 0.8rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .date-main {
+        margin: 0;
+        font-size: clamp(2.25rem, 5.6vw, 5rem);
+        font-weight: 900;
+        letter-spacing: -0.08em;
+        line-height: 0.9;
+      }
+
+      .date-main span {
+        display: block;
+        margin-top: 10px;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.8vw, 1.24rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .date-caption {
+        max-width: 22ch;
+        margin: 16px auto 0;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+        font-weight: 700;
+        line-height: 1.6;
+      }
+
+      .details {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        border-top: 1px solid var(--line-strong);
+      }
+
+      .section-title {
+        padding: clamp(24px, 4vw, 44px) clamp(18px, 4vw, 52px);
+        border-right: 1px solid var(--line);
+      }
+
+      .section-title p {
+        margin: 0 0 10px;
+        color: var(--stamp);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .section-title h2 {
+        max-width: 10ch;
+        margin: 0;
+        font-size: clamp(2rem, 4.8vw, 4.6rem);
+        font-weight: 900;
+        letter-spacing: -0.07em;
+        line-height: 0.95;
+      }
+
+      .detail-list {
+        display: grid;
+      }
+
+      .detail-row {
+        display: grid;
+        grid-template-columns: minmax(9rem, 0.36fr) 1fr;
+        min-height: 104px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .detail-row:last-child {
+        border-bottom: 0;
+      }
+
+      .detail-row dt,
+      .detail-row dd {
+        margin: 0;
+        padding: 24px clamp(18px, 3vw, 32px);
+      }
+
+      .detail-row dt {
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .detail-row dd {
+        border-left: 1px solid var(--line);
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.6vw, 1.13rem);
+        font-weight: 650;
+        line-height: 1.7;
+      }
+
+      .service-list {
+        display: grid;
+        gap: 9px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .service-list li {
+        position: relative;
+        padding-left: 16px;
+      }
+
+      .service-list li::before {
+        content: "";
+        position: absolute;
+        top: 0.78em;
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--stamp);
+      }
+
+      .closing {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 22px;
+        align-items: end;
+        padding: clamp(24px, 4vw, 42px) clamp(18px, 4vw, 52px);
+        border-top: 1px solid var(--line-strong);
+      }
+
+      .closing p {
+        max-width: 58ch;
+        margin: 0;
+        color: var(--ink-soft);
+        font-weight: 700;
+        line-height: 1.65;
+      }
+
+      .stamp {
+        flex: 0 0 auto;
+        border: 2px solid rgba(195, 74, 47, 0.62);
+        border-radius: 50%;
+        color: var(--stamp-dark);
+        display: grid;
+        place-items: center;
+        width: 104px;
+        height: 104px;
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-align: center;
+        text-transform: uppercase;
+        transform: rotate(-8deg);
+      }
+
+      @keyframes boardIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.985);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes paperSweep {
+        from {
+          transform: translateX(-110%);
+        }
+        to {
+          transform: translateX(145%);
+        }
+      }
+
+      @keyframes lineGrow {
+        from {
+          transform: scaleX(0);
+        }
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes signal {
+        0% {
+          box-shadow: 0 0 0 0 rgba(195, 74, 47, 0.26);
+        }
+        72% {
+          box-shadow: 0 0 0 9px rgba(195, 74, 47, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(195, 74, 47, 0);
+        }
+      }
+
+      @media (hover: hover) {
+        .status {
+          transition:
+            transform 180ms ease,
+            background-color 180ms ease;
+        }
+
+        .status:hover {
+          background: rgba(195, 74, 47, 0.14);
+          transform: translateY(-1px);
+        }
+      }
+
+      @media (max-width: 860px) {
+        main {
+          width: min(100% - 20px, 1180px);
+          padding: 10px 0 22px;
+        }
+
+        .notice {
+          min-height: auto;
+        }
+
+        .masthead,
+        .hero,
+        .details,
+        .closing {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy,
+        .section-title {
+          border-right: 0;
+        }
+
+        .date-board,
+        .details,
+        .closing {
+          border-top: 1px solid var(--line-strong);
+        }
+
+        .date-board {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .date-block {
+          border-bottom: 0;
+        }
+
+        .date-block + .date-block {
+          border-left: 1px solid var(--line);
+        }
+
+        h1,
+        .section-title h2 {
+          max-width: 12ch;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .masthead {
+          grid-template-columns: 1fr;
+        }
+
+        .status {
+          justify-content: center;
+          width: 100%;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero-copy {
+          padding-top: 34px;
+          padding-bottom: 34px;
+        }
+
+        .date-board {
+          grid-template-columns: 1fr;
+        }
+
+        .date-block + .date-block {
+          border-top: 1px solid var(--line);
+          border-left: 0;
+        }
+
+        .detail-row {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-row dd {
+          border-top: 1px solid var(--line);
+          border-left: 0;
+          padding-top: 18px;
+        }
+
+        .closing {
+          align-items: start;
+        }
+
+        .stamp {
+          width: 88px;
+          height: 88px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="notice" aria-labelledby="maintenance-title">
+        <header class="masthead">
+          <div class="brand" aria-label="zzirit 상태 안내">
+            <span class="brand-name">zzirit</span>
+            <span class="brand-note">상태 안내</span>
+          </div>
+          <div class="status">점검 예정</div>
+        </header>
+
+        <section class="hero">
+          <div class="hero-copy">
+            <div>
+              <p class="kicker">서버 이전 안내</p>
+              <h1 id="maintenance-title">서비스 이용이 잠시 멈춥니다</h1>
+              <p class="lead">
+                서버 이전으로 인해
+                <strong><time datetime="2026-04-25">2026년 4월 25일(토)</time>부터</strong>
+                <strong><time datetime="2026-04-26">4월 26일(일)</time>까지</strong>
+                <strong>zzirit.kr</strong> 및 하위 서비스에 접속할 수 없습니다.
+              </p>
+            </div>
+            <div class="impact-line">해당 기간 전체 서비스 접근 불가</div>
+          </div>
+
+          <aside class="date-board" aria-label="점검 기간">
+            <div class="date-block">
+              <div>
+                <p class="date-label">시작</p>
+                <p class="date-main">
+                  <time datetime="2026-04-25">04.25</time>
+                  <span>토요일</span>
+                </p>
+              </div>
+            </div>
+            <div class="date-block">
+              <div>
+                <p class="date-label">종료</p>
+                <p class="date-main">
+                  <time datetime="2026-04-26">04.26</time>
+                  <span>일요일</span>
+                </p>
+                <p class="date-caption">작업 종료 후 서비스를 다시 열겠습니다.</p>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="details" aria-labelledby="details-title">
+          <div class="section-title">
+            <p>필수 확인</p>
+            <h2 id="details-title">무엇이 멈추나요</h2>
+          </div>
+
+          <dl class="detail-list">
+            <div class="detail-row">
+              <dt>사유</dt>
+              <dd><strong>서버 이전</strong> 작업을 진행합니다.</dd>
+            </div>
+            <div class="detail-row">
+              <dt>대상</dt>
+              <dd>
+                <ul class="service-list">
+                  <li><strong>zzirit.kr</strong> 메인 웹 서비스</li>
+                  <li><strong>parrot.zzirit.kr</strong> 하위 서비스</li>
+                  <li>그 외 <strong>*.zzirit.kr</strong> 형태의 운영 서비스 전반</li>
+                </ul>
+              </dd>
+            </div>
+            <div class="detail-row">
+              <dt>확인</dt>
+              <dd>작업 진행 상황이나 정상화 안내는 이 페이지에 반영합니다.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <footer class="closing">
+          <p>
+            이 페이지는 메인 서비스와 분리되어 있어 점검 중에도 계속 열립니다. 변동 사항이
+            있으면 같은 주소에서 다시 안내하겠습니다.
+          </p>
+          <div class="stamp" aria-label="마지막 업데이트 2026년 4월 24일">
+            Updated<br />
+            2026.04.24
+          </div>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
