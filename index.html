@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>zzirit 서비스 점검 안내</title>
+    <meta
+      name="description"
+      content="2026년 4월 25일(토)부터 4월 26일(일)까지 zzirit.kr 및 하위 서비스가 서버 이전으로 일시 중단됩니다."
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0e1726" />
+    <meta property="og:title" content="zzirit 서비스 점검 안내" />
+    <meta
+      property="og:description"
+      content="2026년 4월 25일(토)부터 4월 26일(일)까지 서버 이전으로 인해 서비스가 일시 중단됩니다."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --bg: #08111f;
+        --bg-soft: rgba(14, 23, 38, 0.82);
+        --panel: rgba(12, 20, 34, 0.9);
+        --panel-strong: rgba(17, 28, 46, 0.96);
+        --line: rgba(170, 193, 225, 0.16);
+        --line-strong: rgba(170, 193, 225, 0.32);
+        --text: #eff6ff;
+        --muted: #b4c7e5;
+        --accent: #7dd3fc;
+        --accent-strong: #38bdf8;
+        --warm: #facc15;
+        --danger: #f97316;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+        --radius: 28px;
+        --radius-sm: 18px;
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+        background:
+          radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 32%),
+          radial-gradient(circle at 80% 0%, rgba(250, 204, 21, 0.16), transparent 24%),
+          linear-gradient(180deg, #07101d 0%, #0a1220 52%, #08111f 100%);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+        color: var(--text);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 88%);
+        pointer-events: none;
+      }
+
+      main {
+        position: relative;
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 48px;
+      }
+
+      .shell {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+          var(--bg-soft);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .shell::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 15% 20%, rgba(125, 211, 252, 0.14), transparent 26%),
+          radial-gradient(circle at 92% 12%, rgba(249, 115, 22, 0.12), transparent 22%);
+        pointer-events: none;
+      }
+
+      .topbar {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text);
+      }
+
+      .brand-mark {
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent), var(--warm));
+        box-shadow: 0 0 18px rgba(125, 211, 252, 0.65);
+      }
+
+      .status-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border: 1px solid rgba(250, 204, 21, 0.28);
+        border-radius: 999px;
+        background: rgba(250, 204, 21, 0.08);
+        color: #fde68a;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      .status-chip::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: currentColor;
+        box-shadow: 0 0 16px currentColor;
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        padding: clamp(28px, 5vw, 60px) 24px 28px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 10ch;
+        font-size: clamp(2.6rem, 7vw, 5.8rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .lead {
+        margin: 22px 0 0;
+        max-width: 62ch;
+        color: var(--muted);
+        font-size: clamp(1.02rem, 2.3vw, 1.18rem);
+        line-height: 1.7;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+        gap: 20px;
+        margin-top: 34px;
+      }
+
+      .panel {
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--panel);
+      }
+
+      .hero-panel {
+        background:
+          linear-gradient(180deg, rgba(56, 189, 248, 0.08), transparent 48%),
+          var(--panel-strong);
+      }
+
+      .hero-panel p,
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .label {
+        margin: 0 0 10px;
+        color: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .window {
+        margin: 0 0 16px;
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+      }
+
+      .service-list,
+      .notes {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .service-list li,
+      .notes li {
+        padding: 12px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .service-list li:first-child,
+      .notes li:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .cards {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        padding: 0 24px 24px;
+      }
+
+      .card {
+        min-height: 100%;
+      }
+
+      .card h2 {
+        margin: 0 0 14px;
+        font-size: 1.12rem;
+        letter-spacing: -0.02em;
+      }
+
+      .timeline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .timeline li + li {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .timeline strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text);
+        font-size: 0.96rem;
+      }
+
+      .impact {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(249, 115, 22, 0.1);
+        color: #fdba74;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .impact::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 0 24px 24px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .footnote {
+        max-width: 56ch;
+      }
+
+      .stamp {
+        white-space: nowrap;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      strong {
+        color: var(--text);
+      }
+
+      time {
+        color: var(--text);
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .cards,
+        footer,
+        .topbar {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar,
+        footer {
+          display: grid;
+        }
+      }
+
+      @media (max-width: 720px) {
+        main {
+          width: min(100% - 20px, 1120px);
+          padding: 10px 0 20px;
+        }
+
+        .shell {
+          border-radius: 26px;
+        }
+
+        .topbar,
+        .hero,
+        .cards,
+        footer {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        .panel {
+          padding: 18px;
+          border-radius: 22px;
+        }
+
+        h1 {
+          max-width: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="shell" aria-labelledby="maintenance-title">
+        <div class="topbar">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>zzirit service status</span>
+          </div>
+          <div class="status-chip">Planned maintenance</div>
+        </div>
+
+        <div class="hero">
+          <p class="eyebrow">Server migration notice</p>
+          <h1 id="maintenance-title">서비스 점검 안내</h1>
+          <p class="lead">
+            서버 이전 작업으로 인해 <strong>zzirit.kr</strong> 및 하위 서비스의 이용이 일시
+            중단됩니다. 점검 기간 동안 웹 접속과 주요 기능 사용이 불가능할 수 있으며,
+            작업이 끝나는 즉시 정상화 상태로 다시 안내하겠습니다.
+          </p>
+
+          <div class="hero-grid">
+            <article class="panel hero-panel">
+              <p class="label">Maintenance window</p>
+              <p class="window">
+                <time datetime="2026-04-25">2026년 4월 25일(토)</time>
+                <br />
+                ~
+                <br />
+                <time datetime="2026-04-26">2026년 4월 26일(일)</time>
+              </p>
+              <p>
+                점검 목적은 <strong>서버 이전</strong>입니다. 사전 예고 없이 더 길게 중단되는
+                상황을 줄이기 위해, 이번 페이지는 메인 서비스와 별도로 운영됩니다.
+              </p>
+              <div class="impact">예상 영향: 전체 서비스 접속 중단</div>
+            </article>
+
+            <aside class="panel">
+              <p class="label">Affected services</p>
+              <ul class="service-list">
+                <li><strong>zzirit.kr</strong> 메인 웹 서비스</li>
+                <li><strong>parrot.zzirit.kr</strong> 하위 서비스</li>
+                <li>그 외 <strong>*.zzirit.kr</strong> 형태의 운영 서비스 전반</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+
+        <section class="cards" aria-label="Maintenance details">
+          <article class="panel card">
+            <p class="label">Before downtime</p>
+            <h2>사전에 확인해 주세요</h2>
+            <ul class="notes">
+              <li>필요한 작업과 자료는 점검 시작 전 미리 저장해 주세요.</li>
+              <li>자동화 작업이나 배치가 있다면 점검 시간과 겹치지 않도록 조정해 주세요.</li>
+              <li>중요 사용자에게는 별도 공지를 함께 전달하는 편이 안전합니다.</li>
+            </ul>
+          </article>
+
+          <article class="panel card">
+            <p class="label">During downtime</p>
+            <h2>점검 중에는 이렇게 보일 수 있습니다</h2>
+            <ul class="timeline">
+              <li>
+                <strong>접속 불가</strong>
+                웹사이트, API, 주요 기능이 정상 응답하지 않을 수 있습니다.
+              </li>
+              <li>
+                <strong>일시적 오류</strong>
+                DNS 전환이나 복구 과정에서 일부 접속 오류가 간헐적으로 발생할 수 있습니다.
+              </li>
+              <li>
+                <strong>이 페이지는 유지</strong>
+                현재 안내 페이지는 메인 서버와 분리되어 있어 점검 중에도 확인할 수 있습니다.
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel card">
+            <p class="label">After recovery</p>
+            <h2>정상화 이후</h2>
+            <ul class="notes">
+              <li>서비스 재개 직후에는 일부 캐시 반영으로 짧은 지연이 생길 수 있습니다.</li>
+              <li>점검이 끝나면 이 페이지 문구를 즉시 정상화 안내로 바꾸는 것을 권장합니다.</li>
+              <li>문제가 남아 있다면 별도 문의 채널이나 공지 채널에서 후속 안내를 추가해 주세요.</li>
+            </ul>
+          </article>
+        </section>
+
+        <footer>
+          <p class="footnote">
+            이 상태 페이지는 메인 서비스와 분리된 정적 호스팅 환경에서 운영하는 것을
+            전제로 작성되었습니다. GitHub Pages에 올리면 메인 서버가 내려가 있어도 공지
+            자체는 계속 노출할 수 있습니다.
+          </p>
+          <p class="stamp">Last updated: 2026-04-24</p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
