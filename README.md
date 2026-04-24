@@ -8,16 +8,9 @@
 
 ## 배포 방식
 
-이 저장소는 `main` 브랜치 루트를 GitHub Pages 소스로 사용하는 것을 기준으로 만들었습니다.
-
 기본 공개 주소 예시:
 
 - `https://doojoo9999.github.io/zzirit-static-page/`
-
-별도 도메인을 붙이고 싶다면:
-
-1. GitHub Pages 설정에서 Custom domain을 지정합니다.
-2. DNS에서 원하는 서브도메인 예: `status.zzirit.kr`를 `doojoo9999.github.io`로 연결합니다.
 
 ## 운영 팁
 
